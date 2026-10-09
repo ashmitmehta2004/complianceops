@@ -16,6 +16,7 @@ from app.api.errors import install_error_handlers
 from app.api.runs import router as runs_router
 from app.api.system import router as system_router
 from app.api.vendors import router as vendors_router
+from app.config import load_env_file
 from app.persistence.database import create_db_engine, create_session_factory, init_db
 
 FRONTEND_DIR = Path(__file__).resolve().parents[2] / "frontend"
@@ -58,4 +59,7 @@ def create_app(
     return app
 
 
+# Production entrypoint (`uvicorn app.main:app`): read backend/.env before anything reads the
+# environment. create_app() itself never loads it, so tests stay hermetic.
+load_env_file()
 app = create_app()
