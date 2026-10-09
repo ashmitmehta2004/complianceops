@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ComplianceOps</title>
+    <link rel="stylesheet" href="css/app.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a class="brand" href="#/">ComplianceOps</a>
+        <nav id="nav" aria-label="Primary">
+          <a href="#/" data-route="overview">Overview</a>
+          <a href="#/runs" data-route="runs">Runs</a>
+          <a href="#/approvals" data-route="approvals">Approvals <span id="nav-pending" class="count" hidden></span></a>
+          <a href="#/new" data-route="new">New task</a>
+        </nav>
+        <div id="env" class="env" aria-live="polite"></div>
+      </div>
+    </header>
+    <main id="main" tabindex="-1"></main>
+    <noscript><p class="notice">ComplianceOps needs JavaScript enabled.</p></noscript>
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>
